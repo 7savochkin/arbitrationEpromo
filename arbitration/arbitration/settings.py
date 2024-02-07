@@ -49,6 +49,8 @@ INSTALLED_APPS = [
     'django_extensions',
     'tinymce',
     # own apps
+    'pages.apps.PagesConfig',
+    'blog.apps.BlogConfig',
 ]
 
 MIDDLEWARE = [

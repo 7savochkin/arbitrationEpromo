@@ -19,10 +19,18 @@ from django.contrib import admin
 from django.urls import path, include
 
 from arbitration import settings
+from blog.urls import urlpatterns as blog_urlpatterns
+from pages.urls import urlpatterns as pages_urlpatterns
+
+arbitration_urlpatterns = [
+    path('', include(pages_urlpatterns)),
+    path('blog/', include(blog_urlpatterns))
+]
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('tinymce/', include('tinymce.urls')),
+    path('', include(arbitration_urlpatterns))
 ]
 
 
