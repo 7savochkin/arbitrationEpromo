@@ -8,6 +8,13 @@
     <title>Blog</title>
 </head>
 <body>
-<h1>Blog</h1>
+<div>
+    <h1>Contact us</h1>
+    <form action="{% url 'contact-us' %}" method="post" class="form-contact">
+        {% csrf_token %}
+        {{ form.as_div }}
+        <button type="submit" class="form-contact__btn">Submit</button>
+    </form>
+</div>
 </body>
 </html>
